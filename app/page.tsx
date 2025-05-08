@@ -1,21 +1,35 @@
-import { BlogPosts } from 'app/components/posts'
-
+import Link from "next/link";
+import Freelance from "./components/freelance";
+import Work from "./components/work";
+import { BlogPosts } from "./components/posts";
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
-      </p>
-      <div className="my-8">
-        <BlogPosts />
+      <h1 className="text-base font-medium">Rohan Kiratsata</h1>
+      <div className="text-sm text-neutral-500">
+        <p className="text-xs">Bangalore, In</p>
+        <div className="mt-5">
+          Full Stack Engineer and part-time Freelancer. In fact I've been
+          freelancing for almost for 4 years now. Currently working as Frontend
+          Engineer. I spend most of my time building scalable apps.
+          <br />
+          Side quest{" "}
+          <Link
+            href="https://kriyavatlabs.com"
+            className="underline text-white"
+          >
+            Kriyavat Labs
+          </Link>
+        </div>
+        <Work />
+        <Freelance />
+        <div className="mt-10">
+          <div>
+            <h2 className="font-medium text-white">blogs</h2>
+            <BlogPosts />
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }

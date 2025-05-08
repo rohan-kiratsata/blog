@@ -15,6 +15,11 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+  --font-jetbrains-mono: var(--font-jetbrains-mono);
+}
+
+.font-jetbrains-mono {
+  font-family: var(--font-jetbrains-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -147,4 +152,9 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+
+.link {
+  @apply text-white pb-[0.2px] border-b border-neutral-500 w-fit;
 }
