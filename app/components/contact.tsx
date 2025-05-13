@@ -12,7 +12,7 @@ export default function Contact() {
         <Link href="https://x.com/sudorohan" className="link">
           X
         </Link>
-        <Link href="mailto:rohan@kiratsata.com" className="link">
+        <Link href="mailto:sudosurohan@gmail.com" className="link">
           Email
         </Link>
       </div>
