@@ -53,7 +53,13 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default async function Blog({ params }: { params: { slug: string } }) {
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function Blog({ params }: any) {
   const posts = await getBlogPosts();
   const post = posts.find((post) => post.slug === params.slug);
 
