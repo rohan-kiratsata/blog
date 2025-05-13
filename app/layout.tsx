@@ -1,13 +1,10 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
 import { JetBrains_Mono } from "next/font/google";
-import { Navbar } from "./components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -15,10 +12,10 @@ export const metadata: Metadata = {
     default: "Home | @sudorohan",
     template: "%s | @sudorohan",
   },
-  description: "Cracked Full Stack Engineer",
+  description: "Full Stack Engineer",
   openGraph: {
     title: "Home | @sudorohan",
-    description: "Cracked Full Stack Engineer",
+    description: "Full Stack Engineer",
     url: baseUrl,
     siteName: "Home | @sudorohan",
     locale: "en_US",
@@ -57,19 +54,11 @@ export default function RootLayout({
         jetbrainsMono.variable
       )}
     >
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-          integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+"
-          crossOrigin="anonymous"
-        />
-      </head>
+      <GoogleTagManager gtmId={process.env.G_TAG_ID || ""} />
+
       <body className="antialiased  font-jetbrains-mono tracking-tight">
         <main className="max-w-3xl mx-auto my-10">
-          {/* <Nav/bar /> */}
           {children}
-          {/* <Footer /> */}
           <Analytics />
           <SpeedInsights />
         </main>
