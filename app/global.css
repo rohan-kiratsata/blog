@@ -158,3 +158,16 @@ table {
 .link {
   @apply text-white pb-[0.2px] border-b border-neutral-500 w-fit;
 }
+
+.prose .math-display {
+  @apply overflow-x-auto py-2;
+  scrollbar-width: none;
+}
+
+.prose .math-display::-webkit-scrollbar {
+  display: none;
+}
+
+.prose .math-inline {
+  @apply mx-1;
+}

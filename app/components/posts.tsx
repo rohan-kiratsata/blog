@@ -17,6 +17,7 @@ export function BlogPosts() {
         })
         .map((post) => (
           <Link
+            key={post.slug}
             href={`/blog/${post.slug}`}
             className="relative hover:border-neutral-800 border-transparent border p-2 cursor-pointer block group"
           >
