@@ -49,10 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx(
-        "text-black bg-white dark:text-white dark:bg-black",
-        jetbrainsMono.variable
-      )}
+      className={cx("bg-neutral-900 text-neutral-50", jetbrainsMono.variable)}
     >
       <GoogleTagManager gtmId={process.env.G_TAG_ID || ""} />
 

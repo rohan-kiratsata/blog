@@ -4,7 +4,7 @@ export default function freelance() {
   return (
     <>
       <h2 className="font-medium text-white mt-10">freelance</h2>
-      <div className="mt-3 px-2">
+      {/* <div className="mt-3 px-2">
         <p>
           <span className="font-medium text-white">
             Employees Internal Portal
@@ -34,7 +34,7 @@ export default function freelance() {
           router, react query for data fetching, migrated from material-tailwind
           to Radix UI for design system
         </p>
-      </div>
+      </div> */}
     </>
   );
 }

@@ -3,15 +3,33 @@ export interface Project {
   description: string;
   link: string;
   year: string;
+  tags?: string[];
 }
 
 export const projects: Project[] = [
+  {
+    title: "check-site-meta dot com",
+    description:
+      "Instantly check metatags, get previews, og tags, SEO tags and much more from any URL.",
+    link: "https://checksitemeta.com",
+    year: "2025",
+    tags: ["micro"],
+  },
+  {
+    title: "Beaconite dot xyz",
+    description:
+      "not just another note taking app. Beaconite lets you create notes, drag and drop images, videos, tweets, articles, and much more without the need of traditional folders. AI powered search and tags.",
+    link: "https://beaconite.xyz",
+    year: "2025",
+    tags: ["productivity"],
+  },
   {
     title: "Ditto",
     description:
       "Ultimate clipboard manager for macOS. Copy and paste multiple items. Supports LIFO & FIFO.",
     link: "https://kriyavatlabs.xyz/ditto",
     year: "2025",
+    tags: ["macOS", "productivity"],
   },
   {
     title: "Grantly.ai",
@@ -19,7 +37,16 @@ export const projects: Project[] = [
       "Find the best scholarship for you using AI based matchmaking.",
     link: "https://grantly-ai.vercel.app",
     year: "2025",
+    tags: ["productivity"],
   },
+  {
+    title: "Learnn",
+    description: "Manually curated collection of resources for developers.",
+    link: "https://learnn.cc",
+    year: "2024",
+    tags: ["productivity"],
+  },
+
   // {
   //   title: "Packet Tracer",
   //   description:

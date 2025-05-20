@@ -12,7 +12,8 @@ export default function Page() {
         <div className="mt-5">
           Full Stack Engineer and part-time Freelancer. In fact I've been
           freelancing for almost for 4 years now. Currently working as Frontend
-          Engineer. I spend most of my time building scalable apps.
+          Engineer. I spend most of my time building scalable apps. I also like
+          to build micro utility tools and apps in my free time.
           <br />
           Side quest{" "}
           <Link href="https://kriyavatlabs.xyz" className="link">
@@ -22,12 +23,12 @@ export default function Page() {
         <Work />
 
         {/* <Freelance /> */}
-        <div className="mt-10">
+        {/* <div className="mt-10">
           <div>
             <h2 className="font-medium text-white">blogs</h2>
             <BlogPosts />
           </div>
-        </div>
+        </div> */}
         <Contact />
       </div>
     </section>

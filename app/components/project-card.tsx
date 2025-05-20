@@ -7,6 +7,7 @@ export default function ProjectCard({
   description,
   link,
   year,
+  tags,
 }: Project) {
   return (
     <Link
@@ -20,7 +21,6 @@ export default function ProjectCard({
       <div className="w-full mt-1">
         <p className="text-xs">{description}</p>
       </div>
-
       {/* Overlay */}
       <div className="group-hover:opacity-100 opacity-0 absolute top-0 left-0 w-3 h-[1px] bg-neutral-600 dark:bg-neutral-800 group-hover:bg-neutral-600 dark:group-hover:bg-neutral-600 transition-colors"></div>
       <div className="group-hover:opacity-100 opacity-0 absolute top-0 left-0 w-[1px] h-3 bg-neutral-600 dark:bg-neutral-800 group-hover:bg-neutral-600 dark:group-hover:bg-neutral-600 transition-colors"></div>
