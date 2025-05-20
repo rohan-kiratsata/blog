@@ -5,6 +5,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { ThemeProvider } from "./util/ThemeContext";
+import ThemeToggle from "./components/ThemeToggle";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -49,16 +51,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx("bg-neutral-900 text-neutral-50", jetbrainsMono.variable)}
+      className={cx("text-primary bg-primary", jetbrainsMono.variable)}
     >
       <GoogleTagManager gtmId={process.env.G_TAG_ID || ""} />
 
-      <body className="antialiased  font-jetbrains-mono tracking-tight">
-        <main className="max-w-3xl mx-auto my-10">
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </main>
+      <body className="antialiased font-jetbrains-mono tracking-tight">
+        <ThemeProvider>
+          <main className="max-w-3xl mx-auto my-10">
+            {children}
+            <Analytics />
+            <SpeedInsights />
+          </main>
+          <ThemeToggle />
+        </ThemeProvider>
       </body>
     </html>
   );

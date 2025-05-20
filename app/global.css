@@ -1,21 +1,123 @@
 @import 'tailwindcss';
 
 ::selection {
-  background-color: #47a3f3;
+  background-color: var(--accent-primary);
   color: #fefefe;
 }
 
 :root {
-  --sh-class: #2d5e9d;
-  --sh-identifier: #354150;
-  --sh-sign: #8996a3;
-  --sh-string: #007f7a;
-  --sh-keyword: #e02518;
-  --sh-comment: #a19595;
-  --sh-jsxliterals: #6266d1;
-  --sh-property: #e25a1c;
-  --sh-entity: #e25a1c;
+  /* Default theme variables will be overridden by JS */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a0a0a0;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #60a5fa;
+  --border-primary: #333333;
+  --border-secondary: #444444;
+  --syntax-class: #4c97f8;
+  --syntax-identifier: #ffffff;
+  --syntax-keyword: #f47067;
+  --syntax-string: #0fa295;
+  
+  /* Other variables */
   --font-jetbrains-mono: var(--font-jetbrains-mono);
+  
+  /* Set initial color scheme */
+  color-scheme: dark;
+}
+
+/* Add smooth transitions to prevent flickering */
+html,
+body,
+*:not(.animate-fadeIn) {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+/* Update syntax highlighting variables to use our theme variables */
+:root {
+  --sh-class: var(--syntax-class);
+  --sh-identifier: var(--syntax-identifier);
+  --sh-sign: var(--text-secondary);
+  --sh-string: var(--syntax-string);
+  --sh-keyword: var(--syntax-keyword);
+  --sh-comment: #a19595;
+  --sh-jsxliterals: var(--accent-primary);
+  --sh-property: var(--accent-secondary);
+  --sh-entity: var(--accent-secondary);
+}
+
+/* Create Tailwind utility classes for theme colors */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-accent { background-color: var(--accent-primary); }
+.bg-accent-secondary { background-color: var(--accent-secondary); }
+.bg-border-primary { background-color: var(--border-primary); }
+.bg-border-secondary { background-color: var(--border-secondary); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.accent-primary { color: var(--accent-primary); }
+.accent-secondary { color: var(--accent-secondary); }
+
+.border-primary { border-color: var(--border-primary); }
+.border-secondary { border-color: var(--border-secondary); }
+.border-accent { border-color: var(--accent-primary); }
+.border-border-primary { border-color: var(--border-primary); }
+
+/* Project card hover effect */
+.border-transparent.hover\:border-border-primary:hover {
+  border-color: var(--border-primary);
+}
+
+/* Windows theme custom effects */
+[data-theme="windows"] button,
+[data-theme="windows"] .btn,
+[data-theme="windows"] input,
+[data-theme="windows"] a.themed-link {
+  font-family: 'Tahoma', 'Arial', sans-serif;
+}
+
+[data-theme="windows"] button,
+[data-theme="windows"] .windows-border {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--border-primary) var(--border-secondary) var(--border-secondary) var(--border-primary);
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Link styling */
+.themed-link {
+  color: var(--accent-primary);
+  border-bottom: 1px solid;
+  border-color: var(--accent-primary);
+  padding-bottom: 0.2px;
+  width: fit-content;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.themed-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/* Animation for theme dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
 }
 
 .font-jetbrains-mono {
@@ -23,13 +125,12 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --sh-class: #4c97f8;
     --sh-identifier: white;
     --sh-keyword: #f47067;
     --sh-string: #0fa295;
-  }
-  html {
+    
     color-scheme: dark;
   }
 }
@@ -152,11 +253,6 @@ table {
 
 .title {
   text-wrap: balance;
-}
-
-
-.link {
-  @apply text-white pb-[0.2px] border-b border-neutral-500 w-fit;
 }
 
 .prose .math-display {

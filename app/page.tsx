@@ -3,11 +3,12 @@ import Freelance from "./components/freelance";
 import Work from "./components/work";
 import { BlogPosts } from "./components/posts";
 import Contact from "./components/contact";
+
 export default function Page() {
   return (
     <section>
-      <h1 className="text-base font-medium">Rohan Kiratsata</h1>
-      <div className="text-sm text-neutral-500">
+      <h1 className="text-base font-medium text-primary">Rohan Kiratsata</h1>
+      <div className="text-sm text-secondary">
         <p className="text-xs">Bangalore, In</p>
         <div className="mt-5">
           Full Stack Engineer and part-time Freelancer. In fact I've been
@@ -16,7 +17,7 @@ export default function Page() {
           to build micro utility tools and apps in my free time.
           <br />
           Side quest{" "}
-          <Link href="https://kriyavatlabs.xyz" className="link">
+          <Link href="https://kriyavatlabs.xyz" className="themed-link">
             Kriyavat Labs
           </Link>
         </div>
@@ -25,7 +26,7 @@ export default function Page() {
         {/* <Freelance /> */}
         {/* <div className="mt-10">
           <div>
-            <h2 className="font-medium text-white">blogs</h2>
+            <h2 className="font-medium text-primary">blogs</h2>
             <BlogPosts />
           </div>
         </div> */}
