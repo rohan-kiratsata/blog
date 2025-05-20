@@ -1,24 +1,10 @@
 "use client";
 
 import { useTheme } from "../util/ThemeContext";
-import { Moon, Sun, Palette, Repeat, Square } from "lucide-react";
-import { ThemeName } from "../util/themes";
-
-// Map theme names to icons
-const themeIcons = {
-  dark: <Moon className="w-5 h-5" />,
-  light: <Sun className="w-5 h-5" />,
-  colorful: <Palette className="w-5 h-5" />,
-  retro: <Repeat className="w-5 h-5" />,
-  windows: <Square className="w-5 h-5" />,
-};
+import { Palette } from "lucide-react";
 
 export default function ThemeToggle() {
   const { theme, cycleTheme } = useTheme();
-
-  const getIcon = (themeName: ThemeName) => {
-    return themeIcons[themeName] || <Moon className="w-5 h-5" />;
-  };
 
   return (
     <button
@@ -31,7 +17,7 @@ export default function ThemeToggle() {
       }}
       onClick={cycleTheme}
     >
-      {getIcon(theme)}
+      <Palette className="w-5 h-5" />
     </button>
   );
 }

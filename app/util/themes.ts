@@ -1,4 +1,10 @@
-export type ThemeName = "dark" | "light" | "colorful" | "retro" | "windows";
+export type ThemeName =
+  | "dark"
+  | "light"
+  | "colorful"
+  | "retro"
+  | "windows"
+  | "subtleBlue";
 
 export interface ThemeColors {
   bgPrimary: string;
@@ -116,6 +122,25 @@ export const themes: Record<ThemeName, Theme> = {
       syntaxIdentifier: "#000000", // Black for identifiers
       syntaxKeyword: "#aa0000", // Red for keywords
       syntaxString: "#006600", // Green for strings
+    },
+  },
+  subtleBlue: {
+    name: "subtleBlue",
+    label: "Subtle Blue",
+    colorScheme: "light",
+    colors: {
+      bgPrimary: "#1E2EDE", // Very bright blue background
+      bgSecondary: "#74c0fc", // Slightly lighter blue for secondary
+      textPrimary: "#FF8A80", // Dark text for contrast
+      textSecondary: "#fff", // Slightly lighter text for secondary
+      accentPrimary: "#FF8A80", // Deeper blue for accents
+      accentSecondary: "#339af0", // Medium blue for secondary accents
+      borderPrimary: "#a5d8ff", // Light blue border
+      borderSecondary: "#228be6", // Medium blue border
+      syntaxClass: "#1864ab", // Deep blue for class names
+      syntaxIdentifier: "#212529", // Dark for identifiers
+      syntaxKeyword: "#d9480f", // Subtle orange for keywords
+      syntaxString: "#2b8a3e", // Subtle green for strings
     },
   },
 };
