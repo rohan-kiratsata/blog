@@ -14,8 +14,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div>
-      <div className="flex-1 w-full gap-4 grid grid-cols-1 max-w-2xl mx-auto">
+    <div className="">
+      <div className="flex-1 w-full gap-4 grid grid-cols-1 ">
         <h2 className="font-mono">[projects]</h2>
         {projects.map((project) => (
           <div key={project.title}>

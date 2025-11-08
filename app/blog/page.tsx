@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section className="max-w-2xl mx-auto">
+    <section className="">
       <h2 className="font-mono">[blog]</h2>
       <BlogPosts />
     </section>

@@ -180,11 +180,11 @@ export default function RootLayout({
             __html: JSON.stringify([personSchema, websiteSchema]),
           }}
         />
-        <main className="flex w-full min-h-screen">
-          <section className="w-1/4">
-            <Sidenav />
+        <main className="flex w-full md:min-h-screen md:flex-row flex-col">
+          <Sidenav />
+          <section className="flex-1 w-full p-5 md:max-h-screen md:overflow-y-auto">
+            {children}
           </section>
-          <section className="flex-1 w-full p-4">{children}</section>
         </main>
         <SpeedInsights />
         <Analytics />

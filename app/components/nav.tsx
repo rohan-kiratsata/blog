@@ -3,7 +3,7 @@ import { NavLink } from "./link";
 
 export default function Sidenav() {
   return (
-    <div className="border-r w-1/4 h-screen p-5 fixed top-0 left-0 z-10">
+    <div className="border-r md:w-1/4 md:h-screen p-5 md:max-h-screen">
       <nav className="mb-3 space-x-3">
         <NavLink href="/">Home</NavLink>
         <NavLink href="/blog">Blog</NavLink>
