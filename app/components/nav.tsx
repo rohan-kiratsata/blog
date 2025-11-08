@@ -1,37 +1,27 @@
-import Link from "next/link";
+import React from "react";
+import { NavLink } from "./link";
 
-const navItems = {
-  "/": {
-    name: "home",
-  },
-  "/blog": {
-    name: "blog",
-  },
-};
-
-export function Navbar() {
+export default function Sidenav() {
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
-        <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
-          id="nav"
-        >
-          <div className="flex flex-row space-x-0 pr-10">
-            {Object.entries(navItems).map(([path, { name }]) => {
-              return (
-                <Link
-                  key={path}
-                  href={path}
-                  className="transition-all hover:text-primary text-secondary flex align-middle relative py-1 px-2 m-1"
-                >
-                  {name}
-                </Link>
-              );
-            })}
-          </div>
-        </nav>
+    <div className="border-r w-1/4 h-screen p-5 fixed top-0 left-0 z-10">
+      <nav className="mb-3 space-x-3">
+        <NavLink href="/">Home</NavLink>
+        <NavLink href="/blog">Blog</NavLink>
+      </nav>
+      <h1 className="text-lg font-medium">
+        Hi, I'm Rohan Kiratsata. <br />
+        Full Stack Engineer at Inagiffy,
+        <br />
+        and a indie hacker.
+      </h1>
+      <div className="mt-3">
+        <p>
+          Email :{" "}
+          <NavLink href="mailto:rohan@kriyavatlabs.xyz">
+            rohan@kriyavatlabs.xyz
+          </NavLink>
+        </p>
       </div>
-    </aside>
+    </div>
   );
 }

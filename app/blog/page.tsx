@@ -1,15 +1,20 @@
-import { BlogPosts } from 'app/components/posts'
+import { BlogPosts } from "app/components/posts";
+import { baseUrl } from "app/sitemap";
 
 export const metadata = {
-  title: 'Blog',
-  description: 'Read my blog.',
-}
+  title: "Blog",
+  description:
+    "Articles and thoughts on engineering, tech, products, and indie hacking by Rohan Kiratsata.",
+  alternates: {
+    canonical: `${baseUrl}/blog`,
+  },
+};
 
 export default function Page() {
   return (
-    <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
+    <section className="max-w-2xl mx-auto">
+      <h2 className="font-mono">[blog]</h2>
       <BlogPosts />
     </section>
-  )
+  );
 }

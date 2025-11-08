@@ -1,37 +1,28 @@
-import Link from "next/link";
-import Freelance from "./components/freelance";
-import Work from "./components/work";
-import { BlogPosts } from "./components/posts";
-import Contact from "./components/contact";
+import ProjectCard from "./components/project-card";
+import { metaData, projects } from "./util/content";
+import { baseUrl } from "./sitemap";
+
+export const metadata = {
+  title: "Home | Rohan Kiratsata - Full Stack Engineer",
+  description:
+    "Portfolio of Rohan Kiratsata - Full Stack Engineer building micro SaaS products and indie hacking.",
+  keywords: metaData.keywords,
+  alternates: {
+    canonical: baseUrl,
+  },
+};
 
 export default function Page() {
   return (
-    <section>
-      <h1 className="text-base font-medium text-primary">Rohan Kiratsata</h1>
-      <div className="text-sm text-secondary">
-        <p className="text-xs">Bangalore, In</p>
-        <div className="mt-5">
-          Full Stack Engineer and part-time Freelancer. In fact I've been
-          freelancing for almost for 4 years now. Currently working as Frontend
-          Engineer. I spend most of my time building scalable apps. I also like
-          to build micro utility tools and apps in my free time.
-          <br />
-          Side quest{" "}
-          <Link href="https://kriyavatlabs.xyz" className="themed-link">
-            Kriyavat Labs
-          </Link>
-        </div>
-        <Work />
-
-        {/* <Freelance /> */}
-        {/* <div className="mt-10">
-          <div>
-            <h2 className="font-medium text-primary">blogs</h2>
-            <BlogPosts />
+    <div>
+      <div className="flex-1 w-full gap-4 grid grid-cols-1 max-w-2xl mx-auto">
+        <h2 className="font-mono">[projects]</h2>
+        {projects.map((project) => (
+          <div key={project.title}>
+            <ProjectCard {...project} />
           </div>
-        </div> */}
-        <Contact />
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
