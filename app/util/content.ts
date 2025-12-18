@@ -55,13 +55,72 @@ export const projects: Project[] = [
   },
 ] as Project[];
 
-export const freelance: Project[] = [
+export interface FreelanceProject {
+  title: string;
+  description: string;
+  link?: string;
+  year: string;
+  preview?: string;
+}
+
+export const freelanceProjects: FreelanceProject[] = [
   {
-    title: "Freelance",
-    description: "Freelance projects",
-    link: "https://github.com/rohan-kiratsata/freelance",
+    title: "CogniPredict",
+    description: "AI-powered predictive analytics platform",
+    link: "https://cognipredict.com",
+    year: "2024",
+    preview:
+      "https://api.microlink.io/?url=https://cognipredict.com&screenshot=true&meta=false&embed=screenshot.url",
   },
-] as Project[];
+  {
+    title: "Dirah Development",
+    description: "Real estate development company website",
+    link: "https://dirahdevelopment.sa",
+    year: "2024",
+    preview:
+      "https://api.microlink.io/?url=https://dirahdevelopment.sa&screenshot=true&meta=false&embed=screenshot.url",
+  },
+  {
+    title: "Riyadh Holding",
+    description: "Investment holding company corporate site",
+    link: "https://riyadhholding.sa",
+    year: "2024",
+    preview:
+      "https://api.microlink.io/?url=https://riyadhholding.sa&screenshot=true&meta=false&embed=screenshot.url",
+  },
+  {
+    title: "Auralam Laminates",
+    description: "Laminate manufacturing company website",
+    link: "https://auralamlaminates.com",
+    year: "2024",
+    preview:
+      "https://api.microlink.io/?url=https://auralamlaminates.com&screenshot=true&meta=false&embed=screenshot.url",
+  },
+  {
+    title: "Adex World",
+    description: "Business solutions platform",
+    link: "https://adexworld.com",
+    year: "2024",
+    preview:
+      "https://api.microlink.io/?url=https://adexworld.com&screenshot=true&meta=false&embed=screenshot.url",
+  },
+  {
+    title: "Learnn",
+    description: "Curated learning resources for developers",
+    link: "https://learnn.cc",
+    year: "2024",
+    preview:
+      "https://api.microlink.io/?url=https://learnn.cc&screenshot=true&meta=false&embed=screenshot.url",
+  },
+  {
+    title: "Beaconite",
+    description: "Digital brain for notes and ideas",
+    link: "https://www.beaconite.xyz",
+    year: "2025",
+    preview:
+      "https://api.microlink.io/?url=https://beaconite.xyz&screenshot=true&meta=false&embed=screenshot.url",
+  },
+];
 
 export const metaData = {
   title: "Home | Rohan Kiratsata - Full Stack Engineer",
