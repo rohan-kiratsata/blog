@@ -4,8 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { Space_Mono } from "next/font/google";
-import Sidenav from "./components/nav";
+import { Inter } from "next/font/google";
 import { NavLink } from "./components/link";
 
 const authorName = "Rohan Kiratsata | sudorohan";
@@ -87,13 +86,10 @@ export const metadata: Metadata = {
   },
 };
 
-const spaceMono = Space_Mono({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
+  variable: "--font-inter",
 });
-
-const cx = (...classes) => classes.filter(Boolean).join(" ");
 
 export default function RootLayout({
   children,
@@ -135,9 +131,9 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={cx("font-mono", spaceMono.variable)}>
+    <html lang="en" className={inter.variable}>
       <GoogleTagManager gtmId={process.env.G_TAG_ID || ""} />
-      <body className="antialiased">
+      <body className="antialiased font-sans">
         <script
           type="application/ld+json"
           suppressHydrationWarning
@@ -145,19 +141,12 @@ export default function RootLayout({
             __html: JSON.stringify([personSchema, websiteSchema]),
           }}
         />
-        <main className="p-5">
-          {/* <Sidenav /> */}
-          <nav className="mb-3 space-x-3">
+        <main className="max-w-xl mx-auto px-6 py-12">
+          <nav className="flex gap-4 mb-12">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/blog">Blog</NavLink>
           </nav>
-          <h1 className="text-lg font-medium">
-            Hi, I'm Rohan Kiratsata. <br />
-            Full Stack Engineer at Inagiffy,
-            <br />
-            and a indie hacker.
-          </h1>
-          <section className="mt-10">{children}</section>
+          {children}
         </main>
         <SpeedInsights />
         <Analytics />

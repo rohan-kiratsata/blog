@@ -8,8 +8,11 @@ export function NavLink({
   children: React.ReactNode;
 }) {
   return (
-    <Link href={href} className="text-[#0000FF]">
-      [ {children} ]
+    <Link
+      href={href}
+      className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+    >
+      {children}
     </Link>
   );
 }
