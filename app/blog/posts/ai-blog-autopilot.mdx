@@ -1,0 +1,79 @@
+---
+title: "I Let an AI Run My Blog for a Week"
+publishedAt: "2026-02-16"
+summary: "Built an AI automation workflow that writes and publishes blog posts. Here's how it works and what actually happened."
+---
+
+I built a system that writes my blog posts automatically. Not entirely hands-off, but close enough that I barely touch the keyboard for content anymore.
+
+This is the meta post about how that system works.
+
+## The Setup
+
+I'm running OpenClaw, which is basically a personal AI agent that lives on my server. It has access to my blog repo, can run commands, and talks to me through Telegram.
+
+Every 3 days, a cron job triggers. The AI generates 5 blog topic ideas based on what I usually write about, dev tools, automation, side projects, honest takes on tech. It sends those to my Telegram with a simple numbered list.
+
+I reply with a number. Or I don't reply at all, and after an hour it just picks the first one and runs with it.
+
+## What Happens Next
+
+Once a topic is selected, the AI:
+
+1. Pulls the latest from my blog repo
+2. Generates the full post (~1000 words)
+3. Writes it to the posts folder as MDX
+4. Runs `pnpm build` to check for errors
+5. Commits and pushes to main
+6. Vercel auto-deploys
+7. Sends me a confirmation on Telegram
+
+The whole thing takes maybe 2 minutes. I get a notification when it's live.
+
+## The Voice Problem
+
+This was the hard part. AI writing sounds like AI writing. You know the style, "In this article, we will explore..." followed by a wall of corporate nothing.
+
+I spent more time on the prompt than the actual automation. Here's what worked:
+
+```
+Write like you talk. Short sentences. Sometimes fragments.
+No emdashes. Use commas or just start a new sentence.
+Be direct. Say what happened. No buildup.
+Okay to say "this didn't work" or "I was wrong"
+```
+
+And a list of banned phrases: "let's dive in", "here's the thing", "that's not hype", basically every AI crutch you've seen a hundred times.
+
+The key was giving it examples of good vs bad. Not just rules, but actual before/after samples of my writing style.
+
+## What Went Wrong
+
+First run failed because I used the wrong model name in the config. Took me 10 minutes of debugging to realize it was a typo.
+
+The timeout logic was also broken initially. The cron job that auto-selects topic #1 was running at the wrong time, so it would generate before I had a chance to pick.
+
+Build errors happened twice. Once because of a missing dependency, once because the generated frontmatter had a typo. The AI fixed both on its own after seeing the error output.
+
+## Is It Actually Useful?
+
+Yes, with caveats.
+
+It removes the "blank page" problem. I don't have to think about what to write or sit down to draft something. The ideas come to me, I pick one, and it's done.
+
+But I still review everything before it goes live. Sometimes the content is good enough to publish as-is. Sometimes I tweak a few sentences. Rarely, I scrap it and regenerate with more context.
+
+The real value is consistency. Before this, I'd go months without posting. Now there's a steady stream of content, and I'm only spending 5 minutes per post on average.
+
+## The Code
+
+If you want to build something similar, you need:
+
+- An AI agent with tool access (I use OpenClaw, but you could roll your own)
+- Cron scheduling for the trigger
+- A messaging integration for approvals (Telegram, Slack, whatever)
+- Git access to your blog repo
+
+The actual automation is just a prompt with clear instructions and a workflow that handles errors gracefully.
+
+I might open source the full config if there's interest. For now, this post exists because the system works.
