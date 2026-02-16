@@ -17,8 +17,8 @@ export default function Sidenav() {
       <div className="mt-3">
         <p>
           Email :{" "}
-          <NavLink href="mailto:rohan@kriyavatlabs.xyz">
-            rohan@kriyavatlabs.xyz
+          <NavLink href="mailto:heyarohan@icloud.com">
+            heyarohan@icloud.com
           </NavLink>
         </p>
       </div>

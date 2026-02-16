@@ -1,0 +1,32 @@
+# sudorohan.xyz
+
+> Personal website and blog of Rohan Kiratsata, a Full Stack Engineer building micro SaaS products and indie hacking.
+
+## About
+
+This is the personal portfolio and blog of Rohan Kiratsata (sudorohan). The site contains articles about engineering, tech, products, and indie hacking.
+
+## Author
+
+- Name: Rohan Kiratsata
+- Role: Full Stack Engineer
+- Twitter: @sudorohan
+- Email: heyarohan@icloud.com
+
+## Sections
+
+- /: Home page with introduction and projects
+- /blog: Technical articles and thoughts
+- /side-quest: Additional content and experiments
+
+## Content
+
+The blog covers topics including:
+- Web development and programming
+- Micro SaaS and product building
+- Indie hacking experiences
+- Technical tutorials and explanations
+
+## Contact
+
+For inquiries, reach out via Twitter @sudorohan or email heyarohan@icloud.com.

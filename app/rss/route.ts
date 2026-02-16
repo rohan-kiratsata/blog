@@ -18,9 +18,9 @@ export async function GET() {
           <link>${baseUrl}/blog/${post.slug}</link>
           <description>${post.metadata.summary || ""}</description>
           <pubDate>${new Date(
-            post.metadata.publishedAt
+            post.metadata.publishedAt,
           ).toUTCString()}</pubDate>
-        </item>`
+        </item>`,
     )
     .join("\n");
 
@@ -31,8 +31,8 @@ export async function GET() {
         <link>${baseUrl}/blog</link>
         <description>Articles and thoughts on engineering, tech, products, and indie hacking by Rohan Kiratsata.</description>
         <language>en-US</language>
-        <managingEditor>rohan@kriyavatlabs.xyz (Rohan Kiratsata)</managingEditor>
-        <webMaster>rohan@kriyavatlabs.xyz (Rohan Kiratsata)</webMaster>
+        <managingEditor>heyarohan@icloud.com (Rohan Kiratsata)</managingEditor>
+        <webMaster>heyarohan@icloud.com (Rohan Kiratsata)</webMaster>
         ${itemsXml}
     </channel>
   </rss>`;

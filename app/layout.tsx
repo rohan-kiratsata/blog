@@ -6,12 +6,14 @@ import { baseUrl } from "./sitemap";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import { NavLink } from "./components/link";
+import InventoryShortcut from "./components/inventory-shortcut";
+import PageTransition from "./components/page-transition";
 
 const authorName = "Rohan Kiratsata | sudorohan";
 const authorTitle = "Full Stack Engineer";
 const authorDescription =
   "Full Stack Engineer building micro saas products and indie hacking.";
-const authorEmail = "rohan@kriyavatlabs.xyz";
+const authorEmail = "heyarohan@icloud.com";
 const twitterHandle = "@sudorohan";
 
 export const metadata: Metadata = {
@@ -141,6 +143,8 @@ export default function RootLayout({
             __html: JSON.stringify([personSchema, websiteSchema]),
           }}
         />
+        <InventoryShortcut />
+        <PageTransition />
         <main className="max-w-xl mx-auto px-6 py-12">
           <nav className="flex gap-4 mb-12">
             <NavLink href="/">Home</NavLink>
