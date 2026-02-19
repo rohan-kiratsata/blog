@@ -1,0 +1,69 @@
+---
+title: "Claude Code in Production: Honest Notes After 30 Days"
+publishedAt: "2026-02-19"
+summary: "What actually worked, what broke, and whether Claude Code is worth the context cost after using it daily for a month."
+---
+
+I've been using Claude Code as my primary coding assistant for about a month now. Not for demos or side projects, but for actual work. Client projects, internal tools, the stuff that matters.
+
+Here's what I actually think.
+
+## What Works
+
+The context window is the killer feature. I can dump an entire codebase into a conversation and Claude actually remembers it. No more re-explaining the same architecture every time I switch files.
+
+For refactoring, it's genuinely good. I point it at a messy function, explain what I want, and it usually gets it right on the first try. The kind of tedious work that used to take 20 minutes now takes 2.
+
+Writing tests is where it shines brightest. I describe the behavior I want to test, maybe paste the function, and it generates comprehensive test cases I wouldn't have thought of. Edge cases, error states, the works.
+
+Documentation too. I hate writing docs. Claude doesn't. It reads my code and explains it better than I would.
+
+## What Breaks
+
+It hallucinates APIs. Not often, but enough that I don't trust it blindly anymore. It'll confidently use a method that doesn't exist, or pass arguments in the wrong order. You still have to read every line.
+
+Long conversations degrade. After maybe 50 back-and-forths, the responses get slower and less coherent. It starts forgetting context you shared earlier. The fix is starting fresh, but then you lose all that shared understanding.
+
+It's expensive. The token costs add up fast when you're feeding it large codebases. I've had single sessions cost more than my lunch. Worth it for complex problems, but not for everything.
+
+## The Context Cost Problem
+
+Here's the thing nobody talks about: Claude Code changes how you think about code.
+
+When you can explain any problem in natural language and get working code back, you stop reaching for the docs. You stop building that muscle memory. I caught myself asking Claude how to do something I definitely knew how to do six months ago.
+
+It's a tradeoff. You move faster now, but maybe you're not learning as deeply. I don't have a clean answer for this. I just notice it happening.
+
+## When I Use It vs When I Don't
+
+I use Claude Code for:
+- Refactoring existing code
+- Writing tests
+- Debugging weird issues (paste the error, paste the code, ask what's wrong)
+- Boilerplate generation
+- Explaining unfamiliar codebases
+
+I don't use it for:
+- Architecture decisions (it'll give you an answer, but it's not the right one for your specific situation)
+- Performance-critical code (it optimizes for readability, not speed)
+- Anything I want to actually understand deeply
+
+## Compared to Copilot
+
+I used GitHub Copilot for a year before switching. The difference is scope.
+
+Copilot is autocomplete on steroids. It predicts your next line. Fast, cheap, always there. Good for typing less.
+
+Claude Code is a conversation. You explain problems, discuss tradeoffs, iterate on solutions. Slower, more expensive, but handles complexity that Copilot can't.
+
+I use both now. Copilot for the small stuff, Claude for the hard stuff.
+
+## Is It Worth It?
+
+Yes, with caveats.
+
+If you're working on complex systems with lots of context, Claude Code saves hours. If you're writing simple CRUD apps, Copilot is probably enough.
+
+The price is real. Budget for it. And don't let it make you lazy. Use it as a tool, not a crutch.
+
+I'm faster than I was a month ago. I ship more, with fewer bugs. That's the only metric that matters.
