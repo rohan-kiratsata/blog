@@ -12,14 +12,16 @@ export default function SideQuestPage() {
     <>
       <div className="max-w-xl">
         <div className="flex-1 w-full gap-4 grid grid-cols-1">
-          <h2 className="font-mono">[dev gigs]</h2>
+          <h2 className="text-base text-neutral-400 dark:text-neutral-500 mb-2 font-medium">
+            dev gigs
+          </h2>
           {freelanceProjects.map((project) => (
             <ProjectPreviewLink key={project.title} project={project} />
           ))}
         </div>
       </div>
 
-      <div className="mt-5 w-full">
+      {/* <div className="mt-5 w-full">
         <div className="max-w-xl mb-4">
           <h2 className="font-mono">[design gigs]</h2>
         </div>
@@ -51,7 +53,7 @@ export default function SideQuestPage() {
             },
           ]}
         />
-      </div>
+      </div> */}
     </>
   );
 }

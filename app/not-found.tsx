@@ -21,7 +21,7 @@ export default function NotFound() {
         404 - Page Not Found
       </h1>
       <p className="mb-4">The page you are looking for does not exist.</p>
-      <Link href="/" className="text-blue-600 hover:underline">
+      <Link href="/" className="text-blue-600 dark:text-blue-400 hover:underline">
         Return to homepage
       </Link>
     </section>

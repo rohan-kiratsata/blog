@@ -1,0 +1,56 @@
+---
+title: "claude code devlog"
+publishedAt: "2026-02-19"
+summary: "active devlog of my claude code workflows and learnings."
+---
+
+The only goal is of this cookbook is to automate claude code to extent where you need close to zero inputs and interaction with your computer/device. Not like one single instance of running claude code. but 4-5 agents working for me while i'm sleeping.
+This is not for beginners but for folks who already use claude code extensively and willing to take it to next level.
+
+These actually are notes to self and not a public blog or guide so except it to be wrong and raw, there is no right or wrong answers here, all the things below are resources that I used and helped me automate stuff at a larger scale.
+
+one of the biggest problem i face right now is not how to build anything? it's about what to build? execution is the second part of the problem. first is the idea.
+so i should think in that direction too. I'll try to automate idea generation that i can build and prolly sell.
+
+# Self aware Claude code
+
+This process aim to integrate claude code with github, make commits, self analyse the requirements, research and keep building apps even when i'm not active on my computer.
+
+to achieve this i need to get aware of superpowers that i can enable using third party skills or agents apart from vanilla version. i have seen people doing it on reddit.
+
+plus i thought of standarising the code template and format that claude can use on every instance. one global tech stack that can be used anywhere.
+
+really simple tech stack:
+
+- Web apps: Next.js as FE and BE, Drizzle ORM, shadcn/ui.
+- Mobile apps
+
+simple solution. I ask claude to run `alias` command. that sets up the boilerplate monorepo project with all the required stack.
+
+```
+alias betterstack
+```
+
+https://skillsmp.com/ - marketplace for all the skills
+[https://skills.sh/](https://skills.sh/)
+
+skills i use actively as of now:
+
+- phaser-gamedev
+- remotion-best-practices
+- ui-ux-pro-max
+- web-design-guidelines
+
+# Automations
+
+https://www.reddit.com/r/ClaudeCode/comments/1qd48fb/using_claude_code_from_bed_made_a_remote_desktop/
+
+# Automating AI Generated Content
+
+For past few weeks i've been trying to create a AI-generated content pool on instagram at a larger scale. Not just 1-2 pages, but managing ~10 pages altogether and i...
+
+---
+
+change in workflow as of **Mar 2026**
+
+Figma MCP with claude code, usually i start off with mockup/hi-fi design for the app. paste figma link on claude code and figma mcp does the job to fetch the whole design and start planning and implementation. i would say 60-70% accurate in design with relevant skill usage.

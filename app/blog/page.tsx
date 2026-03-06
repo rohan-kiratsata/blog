@@ -12,8 +12,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section className="">
-      <h2 className="font-mono">[blog]</h2>
+    <section>
+      <h2 className="text-base text-neutral-400 dark:text-neutral-500 font-medium">writings</h2>
       <BlogPosts />
     </section>
   );

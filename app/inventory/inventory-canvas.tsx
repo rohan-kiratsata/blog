@@ -119,7 +119,7 @@ export default function InventoryCanvas() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 bg-neutral-100 overflow-hidden select-none"
+      className="fixed inset-0 bg-neutral-100 dark:bg-neutral-900 overflow-hidden select-none"
       style={{ cursor: isDragging ? "grabbing" : "grab" }}
       onMouseDown={handleMouseDownWithReset}
       onMouseMove={handleMouseMoveWithThreshold}
@@ -165,7 +165,7 @@ export default function InventoryCanvas() {
             </div>
             {/* Item label */}
             <div className="mt-2 flex justify-center">
-              <span className="px-3 py-1.5 bg-white rounded-full text-sm text-neutral-800 shadow-sm border border-neutral-200 whitespace-nowrap">
+              <span className="px-3 py-1.5 bg-white dark:bg-neutral-800 rounded-full text-sm text-neutral-800 dark:text-neutral-200 shadow-sm border border-neutral-200 dark:border-neutral-700 whitespace-nowrap">
                 {item.name}
               </span>
             </div>
@@ -182,9 +182,9 @@ export default function InventoryCanvas() {
             top: tooltipPosition.y + 16,
           }}
         >
-          <div className="bg-neutral-900 text-white px-3 py-2 rounded-lg text-sm max-w-xs shadow-lg">
+          <div className="bg-neutral-900 dark:bg-neutral-800 text-white px-3 py-2 rounded-lg text-sm max-w-xs shadow-lg">
             <p className="font-medium">{hoveredItem.name}</p>
-            <p className="text-neutral-400 text-xs mt-0.5">
+            <p className="text-neutral-400 dark:text-neutral-400 text-xs mt-0.5">
               {hoveredItem.description}
             </p>
           </div>
@@ -193,13 +193,13 @@ export default function InventoryCanvas() {
 
       {/* Instructions */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40">
-        <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-neutral-600 shadow-sm border border-neutral-200">
+        <div className="bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-neutral-600 dark:text-neutral-300 shadow-sm border border-neutral-200 dark:border-neutral-700">
           Drag to explore • Click items to learn more • Press{" "}
-          <kbd className="px-1.5 py-0.5 bg-neutral-100 rounded text-xs font-mono">
+          <kbd className="px-1.5 py-0.5 bg-neutral-100 dark:bg-neutral-800 rounded text-xs font-mono">
             I
           </kbd>{" "}
           or{" "}
-          <kbd className="px-1.5 py-0.5 bg-neutral-100 rounded text-xs font-mono">
+          <kbd className="px-1.5 py-0.5 bg-neutral-100 dark:bg-neutral-800 rounded text-xs font-mono">
             Esc
           </kbd>{" "}
           to exit
@@ -208,8 +208,8 @@ export default function InventoryCanvas() {
 
       {/* Title */}
       <div className="fixed top-6 left-6 z-40">
-        <h1 className="text-xl font-medium text-neutral-900">My Inventory</h1>
-        <p className="text-sm text-neutral-500">Things I use and love</p>
+        <h1 className="text-xl font-medium text-neutral-900 dark:text-neutral-100">My Inventory</h1>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">Things I use and love</p>
       </div>
     </div>
   );

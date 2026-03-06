@@ -32,21 +32,6 @@ export const projects: Project[] = [
     year: "2025",
     tags: ["macOS", "productivity"],
   },
-  // {
-  //   title: "Grantly.ai",
-  //   description:
-  //     "Find the best scholarship for you using AI based matchmaking.",
-  //   link: "www.grantly-ai.vercel.app",
-  //   year: "2025",
-  //   tags: ["productivity"],
-  // },
-  {
-    title: "Learnn",
-    description: "Manually curated collection of resources for developers.",
-    link: "https://www.learnn.cc",
-    year: "2024",
-    tags: ["productivity"],
-  },
   {
     title: "FoodieVVN",
     description: "Find food lounges and tiffin services near your location.",
@@ -103,22 +88,6 @@ export const freelanceProjects: FreelanceProject[] = [
     year: "2024",
     preview:
       "https://api.microlink.io/?url=https://adexworld.com&screenshot=true&meta=false&embed=screenshot.url",
-  },
-  {
-    title: "Learnn",
-    description: "Curated learning resources for developers",
-    link: "https://learnn.cc",
-    year: "2024",
-    preview:
-      "https://api.microlink.io/?url=https://learnn.cc&screenshot=true&meta=false&embed=screenshot.url",
-  },
-  {
-    title: "Beaconite",
-    description: "Digital brain for notes and ideas",
-    link: "https://www.beaconite.xyz",
-    year: "2025",
-    preview:
-      "https://api.microlink.io/?url=https://beaconite.xyz&screenshot=true&meta=false&embed=screenshot.url",
   },
 ];
 

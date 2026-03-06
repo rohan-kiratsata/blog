@@ -56,7 +56,7 @@ export function ProjectPreviewLink({ project }: { project: FreelanceProject }) {
             top: position.y,
           }}
         >
-          <div className="w-72 h-44 rounded-lg overflow-hidden shadow-xl border border-neutral-200 bg-neutral-100">
+          <div className="w-72 h-44 rounded-lg overflow-hidden shadow-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.preview}
