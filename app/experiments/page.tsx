@@ -14,10 +14,10 @@ export const metadata = {
 
 export default function ExperimentsPage() {
   const activeProjects = projects.filter(
-    (project) => parseInt(project.year) >= 2024,
+    (project) => project.is_active === true,
   );
   const graveyardProjects = projects.filter(
-    (project) => parseInt(project.year) < 2024,
+    (project) => project.is_active === false,
   );
 
   const tabs = [

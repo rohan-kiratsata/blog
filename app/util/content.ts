@@ -5,38 +5,45 @@ export interface Project {
   year: string;
   tags?: string[];
   icon?: string;
+  is_active: boolean;
 }
 
 export const projects: Project[] = [
   {
-    title: "Check Site Meta",
+    title: "Agetic Meeting Partner",
+    description:
+      "skip boring meeetings. your personal agent joins the calls, responds to teammates, talks, replies, and takes notes.",
+    link: "#",
+    year: "2026",
+    tags: ["micro"],
+    is_active: true,
+  },
+  {
+    title: "Vesper",
+    description:
+      "long-distance relationship app for couples. create shared memories and stay connected.",
+    link: "#",
+    year: "2026",
+    tags: ["micro"],
+    is_active: true,
+  },
+  {
+    title: "check-site-meta",
     description:
       "Instantly check metatags, get previews, og tags, SEO tags and much more from any URL.",
     link: "https://www.checksitemeta.com",
     year: "2025",
     tags: ["micro"],
-    // icon: "/icons/checksitemeta.com.png",
-  },
-  {
-    title: "Beaconite",
-    description: "Your digital brain, connect your notes, ideas, and more.",
-    link: "https://www.beaconite.xyz",
-    year: "2025",
-    tags: ["productivity"],
+    is_active: true,
   },
   {
     title: "Ditto",
     description:
       "Ultimate clipboard manager for macOS. Copy and paste multiple items.",
-    link: "https://www.kriyavatlabs.xyz/ditto",
+    link: "https://github.com/kriyavat/ditto",
     year: "2025",
     tags: ["macOS", "productivity"],
-  },
-  {
-    title: "FoodieVVN",
-    description: "Find food lounges and tiffin services near your location.",
-    link: "https://www.foodie-vvn.netlify.app/",
-    year: "2022",
+    is_active: false,
   },
 ] as Project[];
 
