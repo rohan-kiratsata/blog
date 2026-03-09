@@ -10,7 +10,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Agetic Meeting Partner",
+    title: "Proxi",
     description:
       "skip boring meeetings. your personal agent joins the calls, responds to teammates, talks, replies, and takes notes.",
     link: "#",
@@ -22,6 +22,15 @@ export const projects: Project[] = [
     title: "Vesper",
     description:
       "long-distance relationship app for couples. create shared memories and stay connected.",
+    link: "#",
+    year: "2026",
+    tags: ["micro"],
+    is_active: true,
+  },
+  {
+    title: "Korse",
+    description:
+      "course creation platform for educators and creators. create, market, and sell online courses with ease.",
     link: "#",
     year: "2026",
     tags: ["micro"],
