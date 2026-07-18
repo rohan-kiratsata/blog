@@ -152,9 +152,8 @@ export default function RootLayout({
           <main className="max-w-2xl mx-auto px-6 py-12">
             <nav className="flex gap-4 mb-12 text-base font-medium">
               <NavLink href="/">home</NavLink>
-              <NavLink href="/experiments">experiments</NavLink>
+              <NavLink href="/projects">projects</NavLink>
               <NavLink href="/blog">writings</NavLink>
-              <NavLink href="/freelance">freelance</NavLink>
             </nav>
             {children}
           </main>

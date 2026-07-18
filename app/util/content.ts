@@ -16,7 +16,8 @@ export const projects: Project[] = [
     link: "#",
     year: "2026",
     tags: ["micro"],
-    is_active: true,
+    is_active: false,
+    icon: "/box.png",
   },
   {
     title: "Vesper",
@@ -25,7 +26,8 @@ export const projects: Project[] = [
     link: "#",
     year: "2026",
     tags: ["micro"],
-    is_active: true,
+    is_active: false,
+    icon: "/box.png",
   },
   {
     title: "Korse",
@@ -34,7 +36,8 @@ export const projects: Project[] = [
     link: "#",
     year: "2026",
     tags: ["micro"],
-    is_active: true,
+    is_active: false,
+    icon: "/box.png",
   },
   {
     title: "check-site-meta",
@@ -43,7 +46,8 @@ export const projects: Project[] = [
     link: "https://www.checksitemeta.com",
     year: "2025",
     tags: ["micro"],
-    is_active: true,
+    is_active: false,
+    icon: "/box.png",
   },
   {
     title: "Ditto",
@@ -53,6 +57,7 @@ export const projects: Project[] = [
     year: "2025",
     tags: ["macOS", "productivity"],
     is_active: false,
+    icon: "/box.png",
   },
 ] as Project[];
 

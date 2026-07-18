@@ -1,6 +1,8 @@
-import { metaData } from "./util/content";
+import { projects, metaData } from "./util/content";
 import { baseUrl } from "./sitemap";
 import Link from "next/dist/client/link";
+import Image from "next/image";
+import NewAppBanner from "./components/new-app-banner";
 
 export const metadata = {
   title: "Home | Rohan Kiratsata - Full Stack Engineer",
@@ -25,16 +27,56 @@ export default function Page() {
         </p>
         <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-lg font-medium">
           I build apps and run experiments. I spent 3 years freelancing, shipped
-          dozens of landing pages and webapps, then realized tech skill is table
-          stakes. Now I'm racing to find the app that hits, running parallel{" "}
+          dozens of apps and landing pages, realized tech skill is table stakes.
+          Now I'm racing to find the app that hits, running parallel{" "}
           <Link
-            href="/experiments"
+            href="/projects"
             className="hover:underline dark:text-white text-black"
           >
-            experiments
+            projects
           </Link>{" "}
-          with AI.
+          with AI agents.
         </p>
+
+        <NewAppBanner />
+
+        {projects.filter((p) => p.is_active).length > 0 && (
+          <>
+            <div className="py-10">
+              <h2 className="text-base text-neutral-400 dark:text-neutral-500 mb-4 font-medium">
+                current projects
+              </h2>
+              <div className="grid grid-cols-1 gap-2">
+                {projects
+                  .filter((p) => p.is_active)
+                  .map((project) => (
+                    <Link
+                      key={project.title}
+                      href={project.link}
+                      className="flex items-center gap-4 mb-2"
+                    >
+                      <Image
+                        src={`${project.icon}`}
+                        alt={project.title}
+                        width={42}
+                        height={42}
+                        className="w-10 h-10"
+                      />
+                      <div>
+                        <h3 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">
+                          {project.title}
+                        </h3>
+
+                        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-base font-medium">
+                          {project.description}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          </>
+        )}
       </section>
     </div>
   );
