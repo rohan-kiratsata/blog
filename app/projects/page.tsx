@@ -4,15 +4,15 @@ import { projects } from "app/util/content";
 import { baseUrl } from "app/sitemap";
 
 export const metadata = {
-  title: "Experiments",
+  title: "Projects",
   description:
     "Projects and experiments by Rohan Kiratsata - micro SaaS products, tools, and indie hacks. | sudorohan",
   alternates: {
-    canonical: `${baseUrl}/experiments`,
+    canonical: `${baseUrl}/projects`,
   },
 };
 
-export default function ExperimentsPage() {
+export default function ProjectsPage() {
   const activeProjects = projects.filter(
     (project) => project.is_active === true,
   );
@@ -48,7 +48,7 @@ export default function ExperimentsPage() {
   return (
     <section>
       <h2 className="text-base text-neutral-400 dark:text-neutral-500 mb-4 font-medium">
-        experiments
+        projects
       </h2>
       <Tabs tabs={tabs} defaultTab="active" />
     </section>

@@ -3,9 +3,13 @@ import Image from "next/image";
 
 export default function NewAppBanner() {
   return (
-    <Link
+    <div className="mt-8">
+      <p className="mb-2 text-base font-medium text-neutral-400 dark:text-neutral-500">
+        checkout fylla, what i am building right now
+      </p>
+      <Link
       href="https://fylla.app/?utm_source=sudorohan&utm_medium=referral"
-      className="mt-8 flex items-center gap-4 rounded-3xl px-3 py-3 group border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-900/60"
+      className="flex items-center gap-4 rounded-3xl px-3 py-3 group border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-900/60"
     >
       <Image
         src="/fylla.svg"
@@ -29,6 +33,7 @@ export default function NewAppBanner() {
         </p>
       </div>
       {/* <span className="shrink-0 rounded-full bg-[#66783E] px-4 py-2 text-sm font-medium text-white transition-colors group-hover:bg-[#57672F]"></span> */}
-    </Link>
+      </Link>
+    </div>
   );
 }

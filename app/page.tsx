@@ -37,8 +37,19 @@ export default function Page() {
           </Link>{" "}
           with AI agents.
         </p>
+        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-lg font-medium mt-4">
+          Day job is founding engineer work, building AI products from a blank
+          repo. Most of what I touch has an LLM in it these days. More on the{" "}
+          <Link
+            href="/about"
+            className="hover:underline dark:text-white text-black"
+          >
+            about
+          </Link>{" "}
+          page.
+        </p>
 
-        <NewAppBanner />
+        {/* <NewAppBanner /> */}
 
         {projects.filter((p) => p.is_active).length > 0 && (
           <>
