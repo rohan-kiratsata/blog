@@ -13,13 +13,13 @@ export const metadata = {
 export default function SkillsPage() {
   return (
     <section>
-      <h2 className="text-base text-neutral-400 dark:text-neutral-500 mb-4 font-medium">
+      <h2 className="text-base text-neutral-400 mb-4 font-medium">
         claude skills
       </h2>
-      <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-lg font-medium mb-10">
+      <p className="text-neutral-600 leading-relaxed text-lg font-medium mb-10">
         Skills I wrote for Claude Code because I kept doing the same thing by
         hand. Download one and drop it into{" "}
-        <code className="text-base text-neutral-900 dark:text-neutral-100">
+        <code className="text-base text-neutral-900">
           ~/.claude/skills/
         </code>
         , or open it in Claude and it installs itself. Free, take what you want.
@@ -31,17 +31,17 @@ export default function SkillsPage() {
             key={skill.name}
             href={skill.file}
             download
-            className="group border-t border-neutral-200 dark:border-neutral-800 py-5 last:border-b"
+            className="group border-t border-neutral-200 py-5 last:border-b"
           >
             <div className="flex items-baseline justify-between gap-4">
-              <h3 className="text-base font-medium text-neutral-900 dark:text-neutral-100">
+              <h3 className="text-base font-medium text-neutral-900">
                 {skill.name}
               </h3>
-              <span className="text-sm text-neutral-400 dark:text-neutral-500 shrink-0 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors">
+              <span className="text-sm text-neutral-400 shrink-0 group-hover:text-neutral-900 transition-colors">
                 download ↓
               </span>
             </div>
-            <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-base font-medium mt-1">
+            <p className="text-neutral-600 leading-relaxed text-base font-medium mt-1">
               {skill.description}
             </p>
           </a>

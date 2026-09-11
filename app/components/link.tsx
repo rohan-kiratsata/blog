@@ -10,7 +10,26 @@ export function NavLink({
   return (
     <Link
       href={href}
-      className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-colors"
+      className="text-neutral-500 hover:text-neutral-900 transition-colors"
+    >
+      {children}
+    </Link>
+  );
+}
+
+export function PrimaryLink({
+  href,
+  children,
+  className,
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`underline text-neutral-500 ${className || ""}`}
     >
       {children}
     </Link>

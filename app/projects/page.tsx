@@ -47,7 +47,7 @@ export default function ProjectsPage() {
 
   return (
     <section>
-      <h2 className="text-base text-neutral-400 dark:text-neutral-500 mb-4 font-medium">
+      <h2 className="text-base text-neutral-400 mb-4 font-medium">
         projects
       </h2>
       <Tabs tabs={tabs} defaultTab="active" />

@@ -1,14 +1,12 @@
 import "./global.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
 import { GoogleTagManager } from "@next/third-parties/google";
-import localFont from "next/font/local";
-import { NavLink } from "./components/link";
+import { Inter } from "next/font/google";
 import InventoryShortcut from "./components/inventory-shortcut";
 import PageTransition from "./components/page-transition";
-import { ThemeProvider } from "./components/theme-provider";
 
 const authorName = "Rohan Kiratsata | sudorohan";
 const authorTitle = "Full Stack Engineer";
@@ -84,16 +82,17 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/favicon.ico",
   },
-  other: {
-    "theme-color": "#000000",
-  },
 };
 
-const generalSans = localFont({
-  src: "../fonts/GeneralSans-Variable.woff2",
-  variable: "--font-general-sans",
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  colorScheme: "light",
+};
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
-  weight: "200 700",
 });
 
 export default function RootLayout({
@@ -136,32 +135,30 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={generalSans.variable} suppressHydrationWarning>
+    <html lang="en" className={inter.variable}>
       <GoogleTagManager gtmId={process.env.G_TAG_ID || ""} />
-      <body className="antialiased font-sans bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
-        <ThemeProvider>
-          <script
-            type="application/ld+json"
-            suppressHydrationWarning
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify([personSchema, websiteSchema]),
-            }}
-          />
-          <InventoryShortcut />
-          <PageTransition />
-          <main className="max-w-2xl mx-auto px-6 py-12">
-            <nav className="flex gap-4 mb-12 text-base font-medium">
-              <NavLink href="/">home</NavLink>
-              <NavLink href="/projects">projects</NavLink>
-              <NavLink href="/blog">writings</NavLink>
-              <NavLink href="/skills">skills</NavLink>
-              <NavLink href="/about">about</NavLink>
-            </nav>
-            {children}
-          </main>
-          <SpeedInsights />
-          <Analytics />
-        </ThemeProvider>
+      <body className="antialiased font-sans bg-white text-neutral-900">
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([personSchema, websiteSchema]),
+          }}
+        />
+        <InventoryShortcut />
+        <PageTransition />
+        <main className="max-w-2xl mx-auto px-6 py-12">
+          {/* <nav className="flex gap-4 mb-12 text-base font-medium">
+            <NavLink href="/">home</NavLink>
+            <NavLink href="/projects">projects</NavLink>
+            <NavLink href="/blog">writings</NavLink>
+            <NavLink href="/skills">skills</NavLink>
+            <NavLink href="/about">about</NavLink>
+          </nav> */}
+          {children}
+        </main>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

@@ -12,7 +12,7 @@ export default function SideQuestPage() {
     <>
       <div className="max-w-xl">
         <div className="flex-1 w-full gap-4 grid grid-cols-1">
-          <h2 className="text-base text-neutral-400 dark:text-neutral-500 mb-2 font-medium">
+          <h2 className="text-base text-neutral-400 mb-2 font-medium">
             dev gigs
           </h2>
           {freelanceProjects.map((project) => (

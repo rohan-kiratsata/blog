@@ -9,12 +9,12 @@ export function GET(request: Request) {
       <div
         tw="flex flex-col w-full h-full items-center justify-center"
         style={{
-          background: "linear-gradient(135deg, #000000 0%, #1a1a1a 100%)",
+          background: "#ffffff",
         }}
       >
         <div tw="flex flex-col w-full px-16 py-12">
           <h1
-            tw="text-6xl font-bold text-white leading-tight"
+            tw="text-6xl font-bold text-gray-900 leading-tight"
             style={{
               fontFamily: "system-ui, -apple-system",
             }}
@@ -22,7 +22,7 @@ export function GET(request: Request) {
             {title}
           </h1>
           <p
-            tw="text-2xl text-gray-400 mt-4"
+            tw="text-2xl text-gray-600 mt-4"
             style={{
               fontFamily: "system-ui, -apple-system",
             }}

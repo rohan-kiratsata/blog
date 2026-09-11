@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
 
 export default function PageTransition() {
   const [isActive, setIsActive] = useState(false);
   const [phase, setPhase] = useState<"idle" | "enter" | "exit">("idle");
-  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const handleTransitionStart = () => {
@@ -36,8 +34,7 @@ export default function PageTransition() {
   if (!isActive) return null;
 
   const isEntering = phase === "enter";
-  const isDark = resolvedTheme === "dark";
-  const overlayColor = isDark ? "10, 10, 10" : "250, 250, 250";
+  const overlayColor = "255, 255, 255";
 
   return (
     <>

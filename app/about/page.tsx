@@ -16,7 +16,7 @@ function A({ href, children }: { href: string; children: React.ReactNode }) {
     <Link
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
-      className="underline underline-offset-4 decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-neutral-900 dark:hover:decoration-neutral-100 text-neutral-900 dark:text-neutral-100 transition-colors"
+      className="underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900 text-neutral-900 transition-colors"
     >
       {children}
     </Link>
@@ -31,8 +31,8 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="border-t border-neutral-200 dark:border-neutral-800 pt-10 mt-10">
-      <h2 className="text-base text-neutral-400 dark:text-neutral-500 mb-5 font-medium">
+    <section className="border-t border-neutral-200 pt-10 mt-10">
+      <h2 className="text-base text-neutral-400 mb-5 font-medium">
         {title}
       </h2>
       {children}
@@ -42,9 +42,9 @@ function Section({
 
 export default function AboutPage() {
   return (
-    <div className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-lg font-medium">
+    <div className="text-neutral-600 leading-relaxed text-lg font-medium">
       <section>
-        <h1 className="text-2xl font-medium text-neutral-900 dark:text-neutral-100 mb-4">
+        <h1 className="text-2xl font-medium text-neutral-900 mb-4">
           Hi, I am Rohan.
         </h1>
         <div className="space-y-4">
@@ -99,13 +99,13 @@ export default function AboutPage() {
           {experience.map((job) => (
             <div key={job.company}>
               <div className="flex items-baseline justify-between gap-4 mb-1.5">
-                <h3 className="text-base text-neutral-900 dark:text-neutral-100 font-medium">
+                <h3 className="text-base text-neutral-900 font-medium">
                   {job.role}{" "}
-                  <span className="text-neutral-400 dark:text-neutral-500">
+                  <span className="text-neutral-400">
                     · {job.company}
                   </span>
                 </h3>
-                <span className="text-sm text-neutral-400 dark:text-neutral-500 shrink-0">
+                <span className="text-sm text-neutral-400 shrink-0">
                   {job.period}
                 </span>
               </div>
