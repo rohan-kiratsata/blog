@@ -1,6 +1,4 @@
-import ProjectCard from "app/components/project-card";
-import { Tabs } from "app/components/tabs";
-import { projects } from "app/util/content";
+import ProjectSection from "app/components/project-section";
 import { baseUrl } from "app/sitemap";
 
 export const metadata = {
@@ -13,44 +11,5 @@ export const metadata = {
 };
 
 export default function ProjectsPage() {
-  const activeProjects = projects.filter(
-    (project) => project.is_active === true,
-  );
-  const graveyardProjects = projects.filter(
-    (project) => project.is_active === false,
-  );
-
-  const tabs = [
-    {
-      id: "active",
-      label: "active",
-      content: (
-        <div className="grid grid-cols-1 gap-4">
-          {activeProjects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
-        </div>
-      ),
-    },
-    {
-      id: "graveyard",
-      label: "graveyard",
-      content: (
-        <div className="grid grid-cols-1 gap-4">
-          {graveyardProjects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
-        </div>
-      ),
-    },
-  ];
-
-  return (
-    <section>
-      <h2 className="text-base text-neutral-400 mb-4 font-medium">
-        projects
-      </h2>
-      <Tabs tabs={tabs} defaultTab="active" />
-    </section>
-  );
+  return <ProjectSection standalone />;
 }

@@ -1,8 +1,6 @@
-import { projects, metaData } from "./util/content";
+import { metaData } from "./util/content";
 import { baseUrl } from "./sitemap";
-import Link from "next/link";
-import Image from "next/image";
-import { Dot, Mail } from "lucide-react";
+import ProjectSection from "./components/project-section";
 import ActiveListItem from "./components/active-dot";
 import { PrimaryLink } from "./components/link";
 
@@ -22,9 +20,7 @@ export default function Page() {
       <section className="py-8">
         {/* <div className="text-3xl mb-4">༼ つ ◕_◕ ༽つ</div> */}
         <h1 className="font-medium text-base">Rohan Kiratsata</h1>
-        <p className="text-neutral-500 mb-3 text-sm">
-          Full Stack Engineer. Products.{" "}
-        </p>
+        <p className="text-neutral-500 mb-3 text-sm">Full Stack Engineer. </p>
         <div className="text-sm">
           <ul className="list-inside text-neutral-800 space-y-3 mt-10">
             <ActiveListItem active={true}>
@@ -33,7 +29,7 @@ export default function Page() {
             <ActiveListItem active={false}>
               i spent 3 years freelancing, shipped dozens of apps and landing
               pages. I realised tech skill is table stakes, so now I'm racing to
-              build something people want badly enough to pay for.
+              build something that hits.
             </ActiveListItem>
             <ActiveListItem active={false}>
               i work at{" "}
@@ -59,40 +55,17 @@ export default function Page() {
                 email
               </PrimaryLink>
             </ActiveListItem>
+            {/* <ActiveListItem active={false}>
+              useful links <PrimaryLink href="/writings">writings</PrimaryLink>,{" "}
+              <PrimaryLink href="/projects">projects</PrimaryLink>,{" "}
+              <PrimaryLink href="/freelance">freelance</PrimaryLink>
+            </ActiveListItem> */}
           </ul>
         </div>
 
-        {projects.filter((p) => p.is_active).length > 0 && (
-          <>
-            <div className="py-10 text-sm">
-              <h2 className="">Projects</h2>
-              <div className="grid grid-cols-1 gap-2">
-                {projects
-                  .filter((p) => p.is_active)
-                  .map((project) => (
-                    <Link key={project.title} href={project.link} className="">
-                      <Image
-                        src={`${project.icon}`}
-                        alt={project.title}
-                        width={42}
-                        height={42}
-                        className="w-10 h-10"
-                      />
-                      <div>
-                        <h3 className="text-lg font-medium text-neutral-900">
-                          {project.title}
-                        </h3>
-
-                        <p className="text-neutral-600 leading-relaxed text-base font-medium">
-                          {project.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-              </div>
-            </div>
-          </>
-        )}
+        <div className="pt-12">
+          <ProjectSection />
+        </div>
       </section>
     </div>
   );
