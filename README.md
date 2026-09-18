@@ -44,3 +44,13 @@ pnpm dev
 Validate the app with `pnpm typecheck` and `pnpm build`. The interface uses a fixed light theme, including browser chrome and social preview images.
 
 Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+
+
+## Zen exploration mode
+
+The home page’s “Take the scenic route” button opens Serein, a calm 3D portfolio planet. The game is loaded on demand. It runs locally in the browser using Three.js and locally hosted CC0 models; no game service or API key is required.
+
+Asset sources and licensing are documented in [docs/zen-assets.md](docs/zen-assets.md).
+
+
+Serein controls: WASD/arrows to move, Shift to sprint, tap Space to jump, hold Space to fly with the jetpack, drag to orbit, scroll to zoom, and **Mouse look** for a captured cursor. Escape releases the cursor before exiting. R scans for portfolio signals, E opens a nearby discovery, and J opens the journal. Touch movement, sprint and hold-to-fly buttons are included. Jetpack charge replenishes on the ground. The 760 m valley contains four regions, 16 encounters, power cells, relays, a repairable crossing, and a companion drone. Discoveries persist on this device; activated beacons and visited portfolio stations enable return travel. Exploration is contained within a surveyed valley; the terrain is deterministic, not an infinite world.

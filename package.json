@@ -7,6 +7,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.20.0",
     "@next/third-parties": "^16.3.4",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "22.20.2",
@@ -26,10 +27,14 @@
     "react-dom": "19.3.0",
     "sugar-high": "^2.4.0",
     "tailwindcss": "4.3.3",
+    "three": "^0.186.0",
     "typescript": "7.0.2"
   },
   "version": "1.0.0",
   "engines": {
     "node": ">=22.0.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.186.0"
   }
 }

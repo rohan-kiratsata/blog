@@ -1,3 +1,4 @@
+import ZenLaunch from "./components/zen/zen-launch";
 import { metaData } from "./util/content";
 import { baseUrl } from "./sitemap";
 import ProjectSection from "./components/project-section";
@@ -63,6 +64,7 @@ export default function Page() {
           </ul>
         </div>
 
+        <ZenLaunch />
         <div className="pt-12">
           <ProjectSection />
         </div>

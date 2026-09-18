@@ -1,0 +1,8 @@
+Ultimate Space Kit — Quaternius
+Author: Quaternius (https://quaternius.com)
+Source: https://quaternius.com/packs/ultimatespacekit.html
+License: Creative Commons Zero (CC0 1.0 Universal)
+https://creativecommons.org/publicdomain/zero/1.0/
+Retrieved September 12, 2026 from the creator-linked public Google Drive folder.
+Included: Plant_1, Plant_3, GeodesicDome, House_Cylinder.
+Embedded glTF files repackaged as GLB, preserving meshes, materials and textures.
