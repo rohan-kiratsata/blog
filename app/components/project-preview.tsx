@@ -37,6 +37,7 @@ export function ProjectPreviewLink({ project }: { project: FreelanceProject }) {
     <>
       <a
         href={project.link}
+        data-reveal
         target="_blank"
         rel="noopener noreferrer"
         className="flex flex-col relative"

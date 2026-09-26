@@ -31,6 +31,7 @@ export default function SkillsPage() {
             key={skill.name}
             href={skill.file}
             download
+            data-reveal
             className="group border-t border-neutral-200 py-5 last:border-b"
           >
             <div className="flex items-baseline justify-between gap-4">

@@ -1,5 +1,5 @@
 import { baseUrl } from "app/sitemap";
-import { experience, socials } from "app/util/content";
+import { socials } from "app/util/content";
 import ActiveListItem from "app/components/active-dot";
 import { PrimaryLink } from "app/components/link";
 
@@ -10,15 +10,6 @@ export const metadata = {
   alternates: {
     canonical: `${baseUrl}/about`,
   },
-};
-
-const workNotes: Record<string, string> = {
-  Inagiffy:
-    "i build AI products from a blank repo. reddit tools for brands, a linkedin content platform, and a whatsapp career bot. architecture through to the interface.",
-  "Nadcab Labs":
-    "i built web3 apps, connected wallets, and worked on the frontend systems behind them. a lot of Next.js, shared components, and making things work on mobile.",
-  "Freelance & early career":
-    "three years of apps and landing pages for startups and agencies. dashboards, CMSes, real-time features. building, deploying, and finding out what breaks with real users.",
 };
 
 export default function AboutPage() {
@@ -47,28 +38,6 @@ export default function AboutPage() {
           <PrimaryLink href={socials.x}>X</PrimaryLink>.
         </ActiveListItem>
       </ul>
-
-      <section className="pt-12" aria-labelledby="about-work">
-        <h2 id="about-work" className="mb-6 text-base text-neutral-500">
-          Previously
-        </h2>
-        <ol className="space-y-6">
-          {experience.map((job) => (
-            <li key={job.company}>
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h3 className="font-medium text-neutral-900">{job.company}</h3>
-                <span className="text-xs tabular-nums text-neutral-500">
-                  {job.period}
-                </span>
-              </div>
-              <p className="mt-1 text-xs text-neutral-500">{job.role}</p>
-              <p className="mt-2 text-[13px] leading-relaxed text-neutral-600">
-                {workNotes[job.company] ?? job.summary}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </section>
 
       <section className="pt-12" aria-labelledby="about-tools">
         <h2 id="about-tools" className="mb-6 text-base text-neutral-500">

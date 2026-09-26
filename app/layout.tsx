@@ -7,6 +7,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import InventoryShortcut from "./components/inventory-shortcut";
 import PageTransition from "./components/page-transition";
+import StaggerReveal from "./components/stagger-reveal";
 
 const authorName = "Rohan Kiratsata | sudorohan";
 const authorTitle = "Full Stack Engineer";
@@ -155,7 +156,7 @@ export default function RootLayout({
             <NavLink href="/skills">skills</NavLink>
             <NavLink href="/about">about</NavLink>
           </nav> */}
-          {children}
+          <StaggerReveal>{children}</StaggerReveal>
         </main>
         <SpeedInsights />
         <Analytics />

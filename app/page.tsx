@@ -26,11 +26,11 @@ export default function Page() {
             <ActiveListItem active={true}>
               i build apps and run experiments.
             </ActiveListItem>
-            <ActiveListItem active={false}>
+            {/* <ActiveListItem active={false}>
               i spent 3 years freelancing, shipped dozens of apps and landing
               pages. I realised tech skill is table stakes, so now I'm racing to
               build something that hits.
-            </ActiveListItem>
+            </ActiveListItem> */}
             <ActiveListItem active={false}>
               i work at{" "}
               <PrimaryLink href="https://inagiffy.news">Inagiffy</PrimaryLink>
