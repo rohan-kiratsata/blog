@@ -41,6 +41,7 @@ export function BlogPosts() {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
+            data-reveal
             className="group block"
           >
             <div className="flex items-baseline justify-between gap-4">

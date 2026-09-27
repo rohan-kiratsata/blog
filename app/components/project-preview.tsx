@@ -37,6 +37,7 @@ export function ProjectPreviewLink({ project }: { project: FreelanceProject }) {
     <>
       <a
         href={project.link}
+        data-reveal
         target="_blank"
         rel="noopener noreferrer"
         className="flex flex-col relative"
@@ -56,7 +57,7 @@ export function ProjectPreviewLink({ project }: { project: FreelanceProject }) {
             top: position.y,
           }}
         >
-          <div className="w-72 h-44 rounded-lg overflow-hidden shadow-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800">
+          <div className="w-72 h-44 rounded-lg overflow-hidden shadow-xl border border-neutral-200 bg-neutral-100">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.preview}

@@ -4,12 +4,12 @@ import Image from "next/image";
 export default function NewAppBanner() {
   return (
     <div className="mt-8">
-      <p className="mb-2 text-base font-medium text-neutral-400 dark:text-neutral-500">
+      <p className="mb-2 text-base font-medium text-neutral-400">
         checkout fylla, what i am building right now
       </p>
       <Link
       href="https://fylla.app/?utm_source=sudorohan&utm_medium=referral"
-      className="flex items-center gap-4 rounded-3xl px-3 py-3 group border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-900/60"
+      className="flex items-center gap-4 rounded-3xl px-3 py-3 group border border-slate-200 bg-slate-100"
     >
       <Image
         src="/fylla.svg"
@@ -21,14 +21,14 @@ export default function NewAppBanner() {
       />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
-          <p className="truncate text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          <p className="truncate text-lg font-semibold text-neutral-900">
             Fylla
           </p>
-          <span className="rounded bg-yellow-200 px-1 py-0.5 text-neutral-800 dark:bg-yellow-300/20 text-xs dark:text-yellow-200">
+          <span className="rounded bg-yellow-200 px-1 py-0.5 text-neutral-800 text-xs">
             new
           </span>
         </div>
-        <p className="text-base font-medium text-neutral-600 dark:text-neutral-300">
+        <p className="text-base font-medium text-neutral-600">
           autofill applications, track progress, review, and get hired quicker.
         </p>
       </div>

@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Rohan Kiratsata, full stack engineer. Stack, work, projects and links.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body, h1, p, ul, ol, li, dl, dt, dd, figure { margin: 0; padding: 0; }
+  ul, ol { list-style: none; }
+  a { color: inherit; }
+</style>
+<title>Rohan Kiratsata — sudorohan</title>
+
+<style>
+  :root {
+    --bg: #faf9f4;
+    --panel: #f2f1e9;
+    --ink: #1a1c15;
+    --muted: #6b6f5f;
+    --faint: #a3a698;
+    --rule: #dedcd0;
+    --accent: #5c6f31;
+    --accent-soft: #eaeddc;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121309;
+      --panel: #1a1c12;
+      --ink: #e9eadf;
+      --muted: #9a9d8c;
+      --faint: #6a6d5e;
+      --rule: #2c2f21;
+      --accent: #a8bf6a;
+      --accent-soft: #232719;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #121309;
+    --panel: #1a1c12;
+    --ink: #e9eadf;
+    --muted: #9a9d8c;
+    --faint: #6a6d5e;
+    --rule: #2c2f21;
+    --accent: #a8bf6a;
+    --accent-soft: #232719;
+  }
+
+  :root[data-theme="light"] {
+    --bg: #faf9f4;
+    --panel: #f2f1e9;
+    --ink: #1a1c15;
+    --muted: #6b6f5f;
+    --faint: #a3a698;
+    --rule: #dedcd0;
+    --accent: #5c6f31;
+    --accent-soft: #eaeddc;
+  }
+
+  html {
+    background: var(--bg);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+      "Liberation Mono", monospace;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 24px 96px;
+    overflow-wrap: break-word;
+  }
+
+  .sheet {
+    max-width: 780px;
+    margin: 0 auto;
+    animation: rise 0.5s ease both;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sheet { animation: none; }
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    padding: 72px 0 32px;
+  }
+
+  .tag {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--faint);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .tag::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  h1 {
+    font-size: clamp(30px, 6.4vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+    margin: 20px 0 6px;
+    text-wrap: balance;
+  }
+
+  .handle {
+    color: var(--accent);
+    font-size: 15px;
+  }
+
+  .blurb {
+    margin-top: 18px;
+    max-width: 60ch;
+    color: var(--muted);
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-top: 22px;
+    font-size: 13px;
+  }
+
+  a {
+    color: var(--ink);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+
+  a:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- sections ---------- */
+
+  section {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    gap: 0 28px;
+    border-top: 1px solid var(--rule);
+    padding: 28px 0;
+  }
+
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--faint);
+    padding-top: 5px;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  @media (max-width: 620px) {
+    section {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .label { padding-top: 0; }
+  }
+
+  /* ---------- lists ---------- */
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  li {
+    position: relative;
+    padding-left: 22px;
+    color: var(--muted);
+    overflow-wrap: break-word;
+  }
+
+  li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--faint);
+  }
+
+  li strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ---------- stack rows ---------- */
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 8px 14px;
+    align-items: baseline;
+  }
+
+  .row dt {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .row dd {
+    color: var(--muted);
+  }
+
+  @media (max-width: 480px) {
+    .row { grid-template-columns: 1fr; gap: 2px; }
+  }
+
+  /* ---------- jobs ---------- */
+
+  .job + .job {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--rule);
+  }
+
+  .job-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 16px;
+    margin-bottom: 8px;
+  }
+
+  .job-title {
+    font-weight: 600;
+  }
+
+  .job-title span {
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .years {
+    font-size: 12px;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  /* ---------- shipped ---------- */
+
+  .ship {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .ship-name {
+    font-weight: 600;
+  }
+
+  .pill {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 1px 6px;
+    vertical-align: 2px;
+    margin-left: 8px;
+  }
+
+  .ship-note {
+    color: var(--muted);
+  }
+
+  .ship + .ship {
+    margin-top: 12px;
+  }
+
+  code {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 0 5px;
+    font-size: 13px;
+    color: var(--ink);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--faint);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="masthead">
+    <p class="tag">full stack engineer · india · remote</p>
+    <h1>Rohan Kiratsata</h1>
+    <p class="handle">@sudorohan</p>
+    <p class="blurb">
+      Founding engineer at a startup. Blank repo to shipped product, repeatedly.
+      Three years freelancing before that. Most of what I build now has an LLM in
+      it. Code is the easy part. Getting people to keep using the thing is the
+      hard part.
+    </p>
+    <p class="links">
+      <a href="https://sudorohan.com">sudorohan.com</a>
+      <a href="https://x.com/sudorohan">x</a>
+      <a href="https://linkedin.com/in/rohankiratsata">linkedin</a>
+      <a href="https://github.com/rohan-kiratsata">github</a>
+    </p>
+  </header>
+
+  <section>
+    <p class="label">Stack</p>
+    <div class="body">
+      <dl class="rows">
+        <div class="row">
+          <dt>Frontend</dt>
+          <dd>Next.js, React, TypeScript, Tailwind</dd>
+        </div>
+        <div class="row">
+          <dt>Backend</dt>
+          <dd>
+            FastAPI when Python and ML are involved, NestJS when it needs
+            structure, Node and Express when it does not
+          </dd>
+        </div>
+        <div class="row">
+          <dt>AI</dt>
+          <dd>Cloud LLMs, LangChain, RAG, MCP servers, agents</dd>
+        </div>
+        <div class="row">
+          <dt>Infra</dt>
+          <dd>GCP, AWS, Docker</dd>
+        </div>
+        <div class="row">
+          <dt>Also</dt>
+          <dd>
+            System design, queues, caching, the stuff that decides whether any of
+            it stays up
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Work</p>
+    <div class="body">
+      <div class="job">
+        <div class="job-head">
+          <p class="job-title">
+            Founding Full Stack Engineer <span>Inagiffy</span>
+          </p>
+          <p class="years">2025 — now</p>
+        </div>
+        <ul>
+          <li>Own the architecture, backend, frontend and LLM layer</li>
+          <li>
+            <strong>Reddit sentiment tool</strong> for brands. Tracks sentiment,
+            generates content strategy. Next.js, NestJS, LangChain, GCP
+          </li>
+          <li>
+            <strong>Linklulu.</strong> Gamified LinkedIn team challenges plus AI
+            content creation
+          </li>
+          <li>
+            <strong>WhatsApp career bot.</strong> Talks like a person. Resume
+            builder, roadmap generator, 10+ micro tools
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <p class="job-title">Web3 Frontend Engineer <span>Nadcab Labs</span></p>
+          <p class="years">2024 — 2025</p>
+        </div>
+        <ul>
+          <li>5+ dApps in Next.js and TypeScript</li>
+          <li>Wallet support across 8+ providers, MetaMask and WalletConnect</li>
+          <li>Monorepo onto shadcn/ui, state on React Query and Zustand</li>
+          <li>DeFi UIs, mobile conversions up around 30%</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <p class="job-title">
+            Full Stack Developer <span>freelance and early career</span>
+          </p>
+          <p class="years">2021 — 2024</p>
+        </div>
+        <ul>
+          <li>20+ web apps for startups, agencies and internal teams</li>
+          <li>
+            Dashboards, CMSes, real-time features, end to end through deployment
+          </li>
+          <li>Learned what breaks in production, the slow way</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Shipped</p>
+    <div class="body">
+      <div>
+        <div class="ship">
+          <p class="ship-name">
+            <a href="https://fylla.app">Fylla</a>
+            <span class="pill">building now</span>
+          </p>
+          <p class="ship-note">
+            Autofill job applications, track progress, get hired quicker
+          </p>
+        </div>
+        <div class="ship">
+          <p class="ship-name">
+            <a href="https://www.checksitemeta.com">check-site-meta</a>
+          </p>
+          <p class="ship-note">Metatags, OG tags and SEO previews from any URL</p>
+        </div>
+        <div class="ship">
+          <p class="ship-name">
+            <a href="https://github.com/kriyavat/ditto">Ditto</a>
+          </p>
+          <p class="ship-note">Clipboard manager for macOS</p>
+        </div>
+        <div class="ship">
+          <p class="ship-name">Proxi, Vesper, Korse <span class="pill">in the oven</span></p>
+          <p class="ship-note">
+            An agent that sits in your meetings, an app for long-distance
+            couples, a course platform
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Claude skills</p>
+    <div class="body">
+      <p style="color: var(--muted)">
+        Skills I wrote for Claude Code because I kept doing the same thing by
+        hand. Free to download at
+        <a href="https://sudorohan.com/skills">sudorohan.com/skills</a>, drop one
+        into <code>~/.claude/skills/</code>.
+      </p>
+      <ul>
+        <li>
+          <strong>microsaas-idea-gen</strong> pulls ideas from live Reddit and X
+          pain points instead of making them up
+        </li>
+        <li>
+          <strong>second-brain</strong> thinking partner for raw notes, links and
+          half-formed ideas
+        </li>
+        <li>
+          <strong>x-tweet-engine</strong> drafts posts in my voice, runs
+          autopsies on the dead ones
+        </li>
+        <li>
+          <strong>wealth-architect</strong> asset structuring, tax strategy,
+          compounding
+        </li>
+        <li><strong>osho</strong> talk to Osho</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Writing</p>
+    <div class="body">
+      <ul>
+        <li>
+          <a href="https://sudorohan.com/blog">sudorohan.com/blog</a>. Mostly
+          what I built and what broke while I built it
+        </li>
+        <li>Same on X, plus memes</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Reach out</p>
+    <div class="body">
+      <p style="color: var(--muted)">
+        Best on <a href="https://x.com/sudorohan">X DMs</a>. Open to interesting
+        problems, especially AI ones.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <span>Rohan Kiratsata · sudorohan</span>
+    <span>Updated July 2026</span>
+  </footer>
+</div>
+</body>
+</html>

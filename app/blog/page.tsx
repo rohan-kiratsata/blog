@@ -13,7 +13,7 @@ export const metadata = {
 export default function Page() {
   return (
     <section>
-      <h2 className="text-base text-neutral-400 dark:text-neutral-500 font-medium">writings</h2>
+      <h2 className="text-base text-neutral-400 font-medium">writings</h2>
       <BlogPosts />
     </section>
   );
